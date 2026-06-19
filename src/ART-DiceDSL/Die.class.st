@@ -17,11 +17,25 @@ Class {
 	#package : 'ART-DiceDSL'
 }
 
+{ #category : 'instance creation' }
+Die class >> withFaces: anInteger [
+	"指定された面数（anInteger）を持つ、新しいサイコロを作成して初期化する。"
+
+	^ self new faces: anInteger; yourself 
+]
+
 { #category : 'accessing' }
 Die >> faces [
 	"サイコロの面の数を外側に返す"
 
 	^ faces
+]
+
+{ #category : 'accessing' }
+Die >> faces: anInteger [
+	"サイコロの面数（anInteger）を設定する。"
+	
+	faces := anInteger
 ]
 
 { #category : 'initialization' }
@@ -30,4 +44,11 @@ Die >> initialize [
 
 	super initialize.
 	faces := 6
+]
+
+{ #category : 'rolling' }
+Die >> roll [
+	"1 から面の数（faces）までのランダムな数値を返す"
+
+	^ faces atRandom
 ]
