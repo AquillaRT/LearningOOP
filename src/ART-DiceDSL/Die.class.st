@@ -46,6 +46,13 @@ Die >> initialize [
 	faces := 6
 ]
 
+{ #category : 'printing' }
+Die >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream nextPutAll: '(' , faces printString , ')'
+]
+
 { #category : 'rolling' }
 Die >> roll [
 	"1 から面の数（faces）までのランダムな数値を返す"

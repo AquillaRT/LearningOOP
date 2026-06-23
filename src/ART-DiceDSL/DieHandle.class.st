@@ -47,3 +47,9 @@ DieHandle >> initialize [
 	super initialize .
 	dice := OrderedCollection new 
 ]
+
+{ #category : 'rolling' }
+DieHandle >> roll [
+
+	^ dice sum: [ :each | each roll ]
+]
