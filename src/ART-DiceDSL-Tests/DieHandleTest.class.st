@@ -65,3 +65,9 @@ DieHandleTest >> testRollStatistical [
 	"平均値が、理論上の期待値から±0.15の誤差の間に美しく収まっているかを検証！"
 	self assert: (average - expectedAverage) abs < 0.15
 ]
+
+{ #category : 'tests' }
+DieHandleTest >> testSimpleHandle [
+
+	self assert: 2 D20 diceNumber = 2
+]
