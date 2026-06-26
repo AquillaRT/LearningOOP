@@ -69,5 +69,5 @@ DieHandleTest >> testRollStatistical [
 { #category : 'tests' }
 DieHandleTest >> testSimpleHandle [
 
-	self assert: 2 D20 diceNumber = 2
+	self assert: 2 D20 diceCount equals: 2
 ]
