@@ -29,10 +29,26 @@ Class {
 	#package : 'ART-DiceDSL'
 }
 
+{ #category : 'accessing' }
+DieHandle >> + aDieHandle [
+
+	| newHandle |
+	newHandle := DieHandle new.
+	self dice do: [ :each | newHandle addDie: each ].
+	aDieHandle dice do: [ :each | newHandle addDie: each ].
+	^ newHandle
+]
+
 { #category : 'adding' }
 DieHandle >> addDie: aDie [
 
 	dice add: aDie
+]
+
+{ #category : 'accessing' }
+DieHandle >> dice [
+
+	^ dice
 ]
 
 { #category : 'accessing' }

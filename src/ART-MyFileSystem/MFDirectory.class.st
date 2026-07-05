@@ -1,9 +1,7 @@
 Class {
 	#name : 'MFDirectory',
-	#superclass : 'Object',
+	#superclass : 'MFElement',
 	#instVars : [
-		'parent',
-		'name',
 		'files'
 	],
 	#category : 'ART-MyFileSystem',
@@ -39,28 +37,10 @@ MFDirectory >> initialize [
 	files := OrderedCollection new
 ]
 
-{ #category : 'accessing' }
-MFDirectory >> name [
+{ #category : 'description' }
+MFDirectory >> kind [
 
-	^ name
-]
-
-{ #category : 'accessing' }
-MFDirectory >> name: aString [
-
-	name := aString
-]
-
-{ #category : 'accessing' }
-MFDirectory >> parent [
-
-	^ parent
-]
-
-{ #category : 'accessing' }
-MFDirectory >> parent: aFile [
-
-	parent := aFile
+	^ 'directory'
 ]
 
 { #category : 'printing' }
@@ -68,8 +48,7 @@ MFDirectory >> printOn: aStream [
 	"自身（ディレクトリ）の文字列表現をストリームに書き込みます。
 	 親がいる場合は再帰的に遡ってフルパスを構築します。"
 
-	parent ifNotNil: [ parent printOn: aStream ].
-	aStream << name.
+	super printOn: aStream.
 	aStream << '/'
 ]
 
