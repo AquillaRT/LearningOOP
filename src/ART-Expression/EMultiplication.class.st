@@ -1,0 +1,34 @@
+Class {
+	#name : 'EMultiplication',
+	#superclass : 'Object',
+	#instVars : [
+		'right',
+		'left'
+	],
+	#category : 'ART-Expression',
+	#package : 'ART-Expression'
+}
+
+{ #category : 'operation' }
+EMultiplication >> evaluate [
+
+	^ left evaluate * right evaluate
+]
+
+{ #category : 'accessing' }
+EMultiplication >> left: anExpression [
+
+	left := anExpression
+]
+
+{ #category : 'arithmetic' }
+EMultiplication >> negated [
+
+	^ ENegation new expression: self
+]
+
+{ #category : 'accessing' }
+EMultiplication >> right: anExpression [
+
+	right := anExpression
+]
