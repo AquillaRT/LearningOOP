@@ -8,6 +8,12 @@ Class {
 	#package : 'ART-Expression'
 }
 
+{ #category : 'instance creation' }
+ENegation class >> expression: anExpression [
+
+	^ self new expression: anExpression
+]
+
 { #category : 'operation' }
 ENegation >> evaluate [
 

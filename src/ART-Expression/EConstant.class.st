@@ -8,6 +8,12 @@ Class {
 	#package : 'ART-Expression'
 }
 
+{ #category : 'instance creation' }
+EConstant class >> value: aNumber [
+
+	^ self new value: aNumber
+]
+
 { #category : 'operation' }
 EConstant >> evaluate [
 

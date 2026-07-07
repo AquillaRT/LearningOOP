@@ -9,6 +9,15 @@ Class {
 	#package : 'ART-Expression'
 }
 
+{ #category : 'instance creation' }
+EAddition class >> left: anInteger right: anInteger2 [
+
+	^ self new
+		  left: anInteger;
+		  right: anInteger2;
+		  yourself
+]
+
 { #category : 'operation' }
 EAddition >> evaluate [
 	^ left evaluate + right evaluate

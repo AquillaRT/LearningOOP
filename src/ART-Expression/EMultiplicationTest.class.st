@@ -5,6 +5,15 @@ Class {
 	#package : 'ART-Expression'
 }
 
+{ #category : 'instance creation' }
+EMultiplicationTest class >> left: anExp right: anExp2 [
+
+	^ self new
+		  left: anExp;
+		  right: anExp2;
+		  yourself
+]
+
 { #category : 'tests' }
 EMultiplicationTest >> testEvaluate [
 
@@ -29,4 +38,15 @@ EMultiplicationTest >> testEvaluateNegated [
 				 right: ep1;
 				 left: ep2) negated evaluate
 		equals: -15
+]
+
+{ #category : 'tests' }
+EMultiplicationTest >> testEvaluateWithClassCreationMessage [
+
+	| ep1 ep2 |
+	ep1 := EConstant value: 5.
+	ep2 := EConstant value: 3.
+	self
+		assert: (EMultiplication left: ep1 right: ep2) evaluate
+		equals: 15
 ]

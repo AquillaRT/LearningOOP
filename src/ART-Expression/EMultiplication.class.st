@@ -9,6 +9,15 @@ Class {
 	#package : 'ART-Expression'
 }
 
+{ #category : 'instance creation' }
+EMultiplication class >> left: anExp right: anExp2 [
+
+	^ self new
+		  left: anExp;
+		  right: anExp2;
+		  yourself
+]
+
 { #category : 'operation' }
 EMultiplication >> evaluate [
 
