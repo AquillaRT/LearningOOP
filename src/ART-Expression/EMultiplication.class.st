@@ -1,6 +1,6 @@
 Class {
 	#name : 'EMultiplication',
-	#superclass : 'Object',
+	#superclass : 'EExpression',
 	#instVars : [
 		'right',
 		'left'
@@ -19,12 +19,6 @@ EMultiplication >> evaluate [
 EMultiplication >> left: anExpression [
 
 	left := anExpression
-]
-
-{ #category : 'arithmetic' }
-EMultiplication >> negated [
-
-	^ ENegation new expression: self
 ]
 
 { #category : 'accessing' }
