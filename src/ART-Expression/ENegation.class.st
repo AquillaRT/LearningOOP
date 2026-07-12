@@ -15,9 +15,10 @@ ENegation class >> expression: anExpression [
 ]
 
 { #category : 'operation' }
-ENegation >> evaluate [
+ENegation >> evaluateWith: aDictionary [
+	"内側に抱えている expression に辞書をバケツリレーして評価させ、返ってきた結果に negated を送って反転する！"
 
-	^ expression evaluate negated
+	^ (expression evaluateWith: aDictionary) negated
 ]
 
 { #category : 'accessing' }

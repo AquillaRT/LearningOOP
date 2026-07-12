@@ -1,10 +1,6 @@
 Class {
 	#name : 'EMultiplication',
-	#superclass : 'EExpression',
-	#instVars : [
-		'right',
-		'left'
-	],
+	#superclass : 'EBinaryExpression',
 	#category : 'ART-Expression',
 	#package : 'ART-Expression'
 }
@@ -19,19 +15,15 @@ EMultiplication class >> left: anExp right: anExp2 [
 ]
 
 { #category : 'operation' }
-EMultiplication >> evaluate [
+EMultiplication >> evaluateWith: aDictionary [
+	"受け取った辞書を左右の子要素にそのままパスして評価させ、その結果を掛け算する"
 
-	^ left evaluate * right evaluate
+	^ (left evaluateWith: aDictionary)
+	  * (right evaluateWith: aDictionary)
 ]
 
-{ #category : 'accessing' }
-EMultiplication >> left: anExpression [
+{ #category : 'printing' }
+EMultiplication >> operatorString [
 
-	left := anExpression
-]
-
-{ #category : 'accessing' }
-EMultiplication >> right: anExpression [
-
-	right := anExpression
+	^ ' * '
 ]

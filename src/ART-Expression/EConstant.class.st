@@ -15,12 +15,14 @@ EConstant class >> value: aNumber [
 ]
 
 { #category : 'operation' }
-EConstant >> evaluate [
+EConstant >> evaluateWith: aDictionary [
+	"辞書は使わないので無視し、自分の固定値をそのまま返す"
 
 	^ value
 ]
 
 { #category : 'accessing' }
-EConstant >> value: anInteger [ 
-	value := anInteger
+EConstant >> value: aNumber [
+
+	value := aNumber
 ]

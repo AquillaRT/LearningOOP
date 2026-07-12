@@ -1,10 +1,6 @@
 Class {
 	#name : 'EAddition',
-	#superclass : 'EExpression',
-	#instVars : [
-		'left',
-		'right'
-	],
+	#superclass : 'EBinaryExpression',
 	#category : 'ART-Expression',
 	#package : 'ART-Expression'
 }
@@ -19,16 +15,15 @@ EAddition class >> left: anInteger right: anInteger2 [
 ]
 
 { #category : 'operation' }
-EAddition >> evaluate [
-	^ left evaluate + right evaluate
+EAddition >> evaluateWith: aDictionary [
+	"受け取った辞書を左右の子要素にそのままパスして評価させ、その結果を足し算する"
+
+	^ (left evaluateWith: aDictionary)
+	  + (right evaluateWith: aDictionary)
 ]
 
-{ #category : 'accesser' }
-EAddition >> left: anExpression [ 
-	left := anExpression
-]
+{ #category : 'printing' }
+EAddition >> operatorString [
 
-{ #category : 'accesser' }
-EAddition >> right: anExpression [ 
-	right := anExpression
+	^ ' + '
 ]
